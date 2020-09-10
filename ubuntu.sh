@@ -1,11 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-if [ "$EUID" -ne 0 ]; then
-
-    echo "Please run as root"
-    exit
-
-fi
+sudo su
 
 sync; echo 3 > /proc/sys/vm/drop_caches
 
@@ -32,6 +27,7 @@ apt -y install bochs bochsbios bochs-x vgabios || exit 1
 apt -y install gdebi-core ghex isomaster python3 python3-pip || exit 1
 
 apt -y purge --autoremove
+exit
 
 mkdir -p ~/.config
 
