@@ -12,6 +12,7 @@ sync; echo 3 > /proc/sys/vm/drop_caches
 echo "vm.swappiness=10" >> /etc/sysctl.conf
 sysctl -p
 
+echo "export DISPLAY=\"`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0\"" >> temp.txt
 echo "unset HISTFILE" >> /etc/bash.bashrc
 
 echo "QT_QPA_PLATFORMTHEME=gtk2" >> /etc/environment
