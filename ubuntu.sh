@@ -20,7 +20,7 @@ apt -y install ttf-mscorefonts-installer || exit 1
 apt -y install ubuntu-restricted-extras || exit 1
 apt -y install binutils bison flex gcc gcc-multilib g++ make nasm || exit 1
 
-apt -y install git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 texinfo webp || exit 1
+apt -y install gettext git imagemagick libncursesw5 qt5-style-plugins p7zip-full p7zip-rar pkg-config sqlite3 texinfo webp || exit 1
 apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qemu-utils || exit 1
 apt -y install bochs bochsbios bochs-x vgabios || exit 1
 apt -y install gdebi-core ghex isomaster python3 python3-pip || exit 1
@@ -29,6 +29,7 @@ apt -y purge --autoremove
 exit
 
 mkdir -p ~/.config
+wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
 echo "[QT]" >> ~/.config/Trolltech.conf
 echo "style=GTK+" >> ~/.config/Trolltech.conf
