@@ -28,7 +28,7 @@ apt -y install gdebi-core ghex isomaster python3 python3-pip || exit 1
 apt -y purge --autoremove
 exit
 
-mkdir -p ~/.config
+mkdir -p ~/.config ~/.fonts
 wget -qO- http://plasmasturm.org/code/vistafonts-installer/vistafonts-installer | bash
 
 echo "[QT]" >> ~/.config/Trolltech.conf
