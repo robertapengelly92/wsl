@@ -25,6 +25,14 @@ apt -y install qemu qemu-block-extra qemu-kvm qemu-slof qemu-system qemu-user qe
 apt -y install bochs bochsbios bochs-x vgabios || exit 1
 apt -y install gdebi-core ghex isomaster python3 python3-pip || exit 1
 
+mkdir /usr/share/desktop-directories
+
+wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.7.7/Hopper-v4-4.7.7-Linux.deb
+wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.7.7/patch-hopper.py
+
+gdebi -n /tmp/Hopper-v4-4.7.7-Linux.deb
+python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
+
 apt -y purge --autoremove
 exit
 
