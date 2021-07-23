@@ -27,10 +27,10 @@ apt -y install gdebi-core ghex isomaster python3 python3-pip || exit 1
 
 mkdir /usr/share/desktop-directories
 
-wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.7.7/Hopper-v4-4.7.7-Linux.deb
-wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.7.7/patch-hopper.py
+wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.8.1/Hopper-v4-4.8.1-Linux.deb
+wget -P /tmp https://raw.githubusercontent.com/robertapengelly92/hopper/main/Hopper%20Disassembler%20v4.8.1/patch-hopper.py
 
-gdebi -n /tmp/Hopper-v4-4.7.7-Linux.deb
+gdebi -n /tmp/Hopper-v4-4.8.1-Linux.deb
 python3 /tmp/patch-hopper.py /opt/hopper-v4/bin/Hopper
 
 apt -y purge --autoremove
